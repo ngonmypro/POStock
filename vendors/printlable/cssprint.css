@@ -1,0 +1,10 @@
+/* CSS Document */
+@media print
+{
+.noprint {visibility:hidden;}
+input{
+    	display:none;
+	 }		
+}
+
+

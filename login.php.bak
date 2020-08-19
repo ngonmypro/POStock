@@ -1,0 +1,180 @@
+﻿<?php @session_start();
+if (!isset($_SESSION['ssUserID'])) { ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/BI.png" type="image/png" />
+
+    <title>Yong BI</title>
+
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+     <!-- lobibox -->
+     <link rel="stylesheet" href="vendors/lobibox/dist/css/Lobibox.min.css"/>
+    <!-- NProgress -->
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="vendors/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form id="loginf" action="javascript:login();">
+              <div>
+                <h1>Login Form</h1>
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" id="user" data-validation="required" data-validation-error-msg="กรุณากรอกชื่อผู้ใช้"  onKeyUp="checkKey(this.id);"/>
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" id="pass" data-validation="required" data-validation-error-msg="กรุณากรอกรหัสผ่าน"  onKeyUp="checkKey(this.id);" />
+              </div>
+              <div>
+                <select id="comp" class="form-control" data-validation="required" data-validation-error-msg="กรุณาเลือกบริษัท">
+                  <option value="">เลือกบริษัท</option>
+                  <option value="1">YH</option>
+                  <option value="2">YC</option>
+                  <option value="3">PT</option>
+                </select>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-default submit" value="Validate">Log in</button>
+                <!--<a class="reset_pass" href="#">Lost your password?</a>-->
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <!--<p class="change_link">New to site?
+                  <a href="#signup" class="to_register"> Create Account </a>
+                </p>-->
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-line-chart"></i> Po & Stock IT</h1>
+                </div>
+                <p>©2018 All Rights Reserved. Create By Yong Group IT Team.</p>
+              </div>
+            </form>
+          </section>
+            <div id="scene3" data-relative-input="true">
+              <div data-depth="0.2"></div>
+              <div data-depth="0.25">Y</div>
+              <div data-depth="0.45">O</div>
+              <div data-depth="0.65">N</div>
+              <div data-depth="0.85">G</div>
+              <div data-depth="1.05">G</div>
+              <div data-depth="1.25">R</div>
+              <div data-depth="1.45">O</div>
+              <div data-depth="1.65">U</div>
+              <div data-depth="1.85">P</div>
+            </div>
+            <ul id="scen" data-relative-input="true">
+              <li class="layer" data-depth="0.2" data-depth-y="-6.00" data-depth-x="-0.40" ><img  src="images/Triangle.png" width="10%"></li>
+              <li class="layer" data-depth="0.4" data-depth-x="-1.00" ><img  src="images/Triangle.png" width="8%" ></li>
+              <li class="layer" data-depth="0.6" data-depth-y="-4.00" data-depth-x="-3.00" ><img  src="images/Triangle.png" width="6%" ></li>
+              <li class="layer" data-depth="0.8" data-depth-x="-0.80"><img  src="images/Triangle.png"  width="4%"></li>
+              <li class="layer" data-depth="1.0" data-depth-y="-2.00" data-depth-x="-1.00" ><img  src="images/Triangle.png" width="2%" ></li>
+            </ul>
+    </div>
+
+        <div id="register" class="animate form registration_form">
+          <section class="login_content">
+            <form>
+              <h1>Create Account</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" required />
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Email" required />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" required />
+              </div>
+              <div>
+                <a class="btn btn-default submit" href="index.html">Submit</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">Already a member ?
+                  <a href="#signin" class="to_register"> Log in </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-line-chart"></i> Yong BI</h1>
+                  <p>©2018 All Rights Reserved. Create By Yong Group IT Team.</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- jQuery -->
+<script src="vendors/jquery/dist/jquery.min.js"></script>
+<script src="vendors/lobibox/dist/js/messageboxes.min.js"></script>
+<script src="vendors/compiled-parallax/parallax.min.js"></script>
+<script src="vendors/jqueryrotate/jQueryRotate.js"></script>
+<script src="vendors/jquery-validator/jquery.form-validator.min.js"></script>
+<script src="js/function.js"></script>
+<script>
+$.validate({
+  form : '#loginf',
+  onSuccess : function(form) {
+      login();
+    }
+});
+
+var scene = document.getElementById('scen');
+var parallaxInstance = new Parallax(scene,{
+  relativeInput: true
+});
+
+var scene3 = document.getElementById('scene3');
+var parallaxInstance3 = new Parallax(scene3);
+parallaxInstance3.friction(0.2, 0.2);
+
+</script>
+<?php } else { 
+  if($_SESSION['ssUserBrah'] == 'YH'){ 
+   //header('Location:YH/index.php'); ?>
+	<script>
+	location.herf="YH/index.php";
+	</script>
+  <?php }elseif($_SESSION['ssUserBrah'] == 'YC'){ 
+   // header('Location:YC/index.php'); ?>
+<script>
+	location.herf="YC/index.php";
+</script>
+ <?php }elseif ($_SESSION['ssUserBrah'] == 'PT') {
+   // header('Location:PT/index.php');  ?>
+<script>
+	location.herf="PT/index.php";
+</script>
+ <?php }
+ }?>
